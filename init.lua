@@ -170,6 +170,7 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
+    main = 'ibl',
     opts = {
       char = '┊',
       show_trailing_blankline_indent = false,
@@ -231,8 +232,12 @@ require('lazy').setup({
 -- Set highlight on search
 vim.o.hlsearch = false
 
+vim.o.cursorline = true
+vim.o.colorcolumn = "80"
+
 -- Make line numbers default
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
