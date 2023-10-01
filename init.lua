@@ -147,6 +147,9 @@ require('lazy').setup({
     'navarasu/onedark.nvim',
     priority = 1000,
     config = function()
+      require('onedark').setup {
+        transparent = true,
+      }
       vim.cmd.colorscheme 'onedark'
     end,
   },
@@ -165,17 +168,17 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    main = 'ibl',
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
-  },
+  -- {
+  --   -- Add indentation guides even on blank lines
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   -- Enable `lukas-reineke/indent-blankline.nvim`
+  --   -- See `:help indent_blankline.txt`
+  --   main = 'ibl',
+  --   opts = {
+  --     char = '┊',
+  --     show_trailing_blankline_indent = false,
+  --   },
+  -- },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -227,6 +230,8 @@ require('lazy').setup({
   { import = 'custom.plugins' },
 }, {})
 
+-- Colorscheme config
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
@@ -238,10 +243,18 @@ vim.o.hlsearch = false
 vim.o.cursorline = true
 vim.o.colorcolumn = "80"
 
+-- Listchars
+vim.o.listchars = ""
+
+
 -- tab size and use spaces
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
--- vim.o.smarttab =
+vim.o.softtabstop = 4
+vim.o.expandtab = true
+
+-- no wrap
+vim.o.wrap = false
 
 -- Make line numbers default
 vim.o.number = true
@@ -343,7 +356,10 @@ vim.keymap.set('n', '<leader>3', '<cmd>lua require("harpoon.ui").nav_file(3)<CR>
 vim.keymap.set('n', '<leader>4', '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', { desc = 'Navigate File [4]' })
 
 -- Neotree
-vim.keymap.set('n', '<M-e>', '<cmd>Neotree toggle<CR>', { desc = 'File Tree' })
+vim.keymap.set('n', '<leader>b', '<cmd>Neotree toggle<CR>', { desc = 'File Tree' })
+
+-- No Neck Pain
+vim.keymap.set('n', '<leader>nn', '<cmd>NoNeckPain<CR>', { desc = 'Toggle [N]o Neck Pain' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
