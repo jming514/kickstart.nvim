@@ -224,7 +224,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -237,6 +237,11 @@ vim.o.hlsearch = false
 -- Highlight cursor line and column 80
 vim.o.cursorline = true
 vim.o.colorcolumn = "80"
+
+-- tab size and use spaces
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+-- vim.o.smarttab =
 
 -- Make line numbers default
 vim.o.number = true
@@ -336,6 +341,9 @@ vim.keymap.set('n', '<leader>1', '<cmd>lua require("harpoon.ui").nav_file(1)<CR>
 vim.keymap.set('n', '<leader>2', '<cmd>lua require("harpoon.ui").nav_file(2)<CR>', { desc = 'Navigate File [2]' })
 vim.keymap.set('n', '<leader>3', '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', { desc = 'Navigate File [3]' })
 vim.keymap.set('n', '<leader>4', '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', { desc = 'Navigate File [4]' })
+
+-- Neotree
+vim.keymap.set('n', '<M-e>', '<cmd>Neotree toggle<CR>', { desc = 'File Tree' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
