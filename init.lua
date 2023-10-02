@@ -213,6 +213,15 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  {
+    'pocco81/true-zen.nvim',
+    config = function()
+      require('true-zen').setup {}
+    end,
+  },
+
+  'folke/zen-mode.nvim',
+
   'ThePrimeagen/harpoon',
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
