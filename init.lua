@@ -249,8 +249,8 @@ require('lazy').setup({
 vim.o.hlsearch = false
 
 -- Highlight cursor line and column 80
-vim.o.cursorline = true
-vim.o.colorcolumn = "80"
+-- vim.o.cursorline = true
+-- vim.o.colorcolumn = "80"
 
 -- Listchars
 vim.o.listchars = ""
