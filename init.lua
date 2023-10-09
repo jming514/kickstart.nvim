@@ -230,6 +230,7 @@ require('lazy').setup({
       },
       plugins = {
         options = {
+          enabled = true,
           laststatus = 3
         }
       }
