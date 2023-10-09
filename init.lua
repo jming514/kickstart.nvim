@@ -148,7 +148,7 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       require('onedark').setup {
-        transparent = true,
+        -- transparent = true,
       }
       vim.cmd.colorscheme 'onedark'
     end,
@@ -220,7 +220,21 @@ require('lazy').setup({
     end,
   },
 
-  'folke/zen-mode.nvim',
+  {
+    'folke/zen-mode.nvim',
+    opts = {
+      window = {
+        options = {
+          number = true
+        }
+      },
+      plugins = {
+        options = {
+          laststatus = 3
+        }
+      }
+    }
+  },
 
   'ThePrimeagen/harpoon',
 
