@@ -277,7 +277,6 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.expandtab = true
 
--- no wrap
 vim.o.wrap = false
 
 -- Make line numbers default
