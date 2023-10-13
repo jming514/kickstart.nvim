@@ -18,6 +18,11 @@ return {
 						require('neo-tree.command').execute({ action = 'close' })
 					end
 				}
+			},
+			filesystem = {
+				follow_current_file = {
+					enabled = true
+				}
 			}
 		}
 	end,
